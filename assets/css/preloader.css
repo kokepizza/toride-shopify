@@ -13,5 +13,16 @@
 
 .logo_preloader {
     width: 50vw;
-    fill: white;
+}
+
+@media (min-width: 768px) {
+    .logo_preloader {
+        width: 30vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo_preloader {
+        width: 20vw;
+    }
 }
