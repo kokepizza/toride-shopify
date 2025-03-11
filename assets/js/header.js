@@ -77,13 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     burgerMenu.addEventListener('click', function() {
         if (isOpen) {
-            burgerTl.timeScale(1).reverse();  // Speed up burger animation when closing
-            menuTl.timeScale(2).reverse();    // Speed up menu animation when closing
+            burgerTl.timeScale(1).reverse();
+            menuTl.timeScale(2).reverse();
         } else {
-            burgerTl.timeScale(1).play();       // Normal speed when opening
-            menuTl.timeScale(1).play();         // Normal speed when opening
+            burgerTl.timeScale(1).play(); 
+            menuTl.timeScale(1).play();
         }
-        
         isOpen = !isOpen;
     });
 });
