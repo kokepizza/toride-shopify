@@ -1,29 +1,89 @@
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth < 768) {
-    const menuButton = document.querySelector('.menu-button');
-    const navigation = document.querySelector('.navigation');
-    const logo = document.querySelector('.logo');
-    const menuButtonSvg = menuButton.querySelector('svg');
-    const navLinks = document.querySelectorAll('.navigation a');
-
-    // Set initial state for GSAP
-    gsap.set(navigation, { right: '-100%', opacity: 0 });
-    gsap.set(navLinks, { x: 100, opacity: 0 });
-
-    menuButton.addEventListener('click', () => {
-      if (navigation.classList.contains('open')) {
-        gsap.to(navigation, { right: '-100%', opacity: 0, duration: 0.5 });
-        gsap.to(navLinks, { x: 100, opacity: 0, stagger: 0.2, duration: 0.5 });
-        navigation.classList.remove('open');
-        logo.style.fill = 'white';
-        menuButtonSvg.style.stroke = 'white';
-      } else {
-        navigation.classList.add('open');
-        gsap.to(navigation, { right: '0%', opacity: 1, duration: 0.5 });
-        gsap.fromTo(navLinks, { x: 100, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.2, duration: 0.5 });
-        logo.style.fill = 'var(--text-color)';
-        menuButtonSvg.style.stroke = 'var(--text-color)';
-      }
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const topLine = document.querySelector('.burger-menu .top');
+    const middleLine = document.querySelector('.burger-menu .middle');
+    const bottomLine = document.querySelector('.burger-menu .bottom');
+    const headerMenu = document.querySelector('.header__menu');
+    const menuItems = document.querySelectorAll('.header__nav ul li');
+    const controlItems = document.querySelectorAll('.header__controls a');
+    
+    let isOpen = false;
+    
+    // Burger animation
+    const burgerTl = gsap.timeline({ paused: true });
+    
+    burgerTl.to(topLine, { 
+        y: 10, 
+        duration: 0.3, 
+        ease: "power2.inOut" 
+    }, 0);
+    
+    burgerTl.to(bottomLine, { 
+        y: -10, 
+        duration: 0.3, 
+        ease: "power2.inOut" 
+    }, 0);
+    
+    burgerTl.to(middleLine, { 
+        opacity: 0, 
+        duration: 0.2, 
+        ease: "power2.inOut" 
+    }, 0.1);
+    
+    burgerTl.to(topLine, { 
+        rotation: 45, 
+        transformOrigin: "center center", 
+        duration: 0.3, 
+        ease: "power2.inOut" 
+    }, 0.3);
+    
+    burgerTl.to(bottomLine, { 
+        rotation: -45, 
+        transformOrigin: "center center", 
+        duration: 0.3, 
+        ease: "power2.inOut" 
+    }, 0.3);
+    
+    // Menu animation
+    const menuTl = gsap.timeline({ paused: true });
+    
+    // Menu slide in
+    menuTl.to(headerMenu, {
+        right: 0,
+        opacity: 1,
+        visibility: 'visible',
+        pointerEvents: 'auto',
+        duration: 0.5,
+        ease: "power3.out"
     });
-  }
+    
+    // Staggered animation for menu items
+    menuTl.to(menuItems, {
+        x: 0,
+        opacity: 1,
+        duration: 0.4,
+        stagger: 0.1,
+        ease: "power2.out"
+    }, "-=0.2");
+    
+    // Staggered animation for control items
+    menuTl.to(controlItems, {
+        x: 0,
+        opacity: 1,
+        duration: 0.4,
+        stagger: 0.1,
+        ease: "power2.out"
+    }, "-=0.3");
+    
+    burgerMenu.addEventListener('click', function() {
+        if (isOpen) {
+            burgerTl.timeScale(1).reverse();  // Speed up burger animation when closing
+            menuTl.timeScale(2).reverse();    // Speed up menu animation when closing
+        } else {
+            burgerTl.timeScale(1).play();       // Normal speed when opening
+            menuTl.timeScale(1).play();         // Normal speed when opening
+        }
+        
+        isOpen = !isOpen;
+    });
 });
