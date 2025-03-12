@@ -193,14 +193,14 @@ button {
 
 @media (min-width: 768px) {
     :root {
-      --padding-x: 24px;
+      --padding-x: 40px;
         --padding-y: 56px;
     }
   }
   
   @media (min-width: 1024px) {
     :root {
-      --padding-x: 40px;
+      --padding-x: 64px;
       --padding-y: 80px;
     }
   }
@@ -221,19 +221,24 @@ body {
     color: var(--text-color);
 }
 
-.section {
-    padding: var(--padding-y) var(--padding-x);
-    max-width: 1600px;
-    margin: 0 auto;
-    width: 100%;
-}
+/* HEADINGS */
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'D-DINCondensed', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     line-height: .9;
-    margin: 1rem 0;
+    text-wrap: balance;
+}
+
+h1, h2 {
+    padding: 0 0 1rem;
+}
+
+@media (min-width: 768px) {
+    h1, h2 {
+        padding: 0 0 2rem;
+    }
 }
 
 h1 {
@@ -244,4 +249,87 @@ h1 {
     h1 {
         font-size: 8vw;
     }
+}
+
+h2 {
+    font-size: 10vw;
+}
+
+@media (min-width: 768px) {
+    h2 {
+        font-size: 5vw;
+    }
+}
+
+h3 {
+    font-size: 6vw;
+}
+
+@media (min-width: 768px) {
+    h3 {
+        font-size: 3vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    h3 {
+        font-size: 2vw;
+    }
+}
+
+/* LAYOUT */
+
+.section {
+    padding: var(--padding-y) var(--padding-x);
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 24px;
+    }
+}
+
+.image {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.contain {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+}
+
+.cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+}
+
+.fill {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
 }
