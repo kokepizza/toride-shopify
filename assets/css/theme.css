@@ -187,7 +187,23 @@ button {
     --infantil: #4d9e45;
     --junior: #D32F2F;
     --senior: #6A1B9A;
+    --padding-x: 16px;
+    --padding-y: 40px;
 }
+
+@media (min-width: 768px) {
+    :root {
+      --padding-x: 24px;
+        --padding-y: 56px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    :root {
+      --padding-x: 40px;
+      --padding-y: 80px;
+    }
+  }
 
 * {
     box-sizing: border-box;
@@ -201,5 +217,31 @@ button {
 body {
     font-family: 'D-DIN', sans-serif;
     font-size: 16px;
+    line-height: 1.5;
     color: var(--text-color);
+}
+
+.section {
+    padding: var(--padding-y) var(--padding-x);
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'D-DINCondensed', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: .9;
+    margin: 1rem 0;
+}
+
+h1 {
+    font-size: 12vw;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 8vw;
+    }
 }
