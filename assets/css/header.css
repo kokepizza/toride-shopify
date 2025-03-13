@@ -305,7 +305,11 @@
   }
 
   .program {
-    grid-column: span 4;
+    grid-column: span 3;
+  }
+
+  .peques, .junior {
+    grid-column: 2 / span 3;
   }
 }
 
@@ -314,18 +318,14 @@
     grid-column: span 12;
     width: 100%;
     display: flex;
-    justify-content: center;
-    height: auto;
   }
 
   .program {
     width: 25%;
-    grid-column: unset;
     transition: width 0.4s cubic-bezier(0.29, 1.31, 0.64, 1);
     height: auto;
   }
 
-  /* Hover effects */
   .program_wrapper:hover .program {
     width: 20%;
   }
