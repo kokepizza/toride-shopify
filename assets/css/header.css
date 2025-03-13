@@ -287,18 +287,63 @@
 
 /* SECTION PROGRAMAS */
 
+.program_wrapper {
+  grid-column: span 4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+} 
+
 .program {
   grid-column: span 2;
+  padding: 0 .5rem;
+}
+
+@media (min-width: 768px) {
+  .program_wrapper {
+    grid-column: span 8;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .program {
+    grid-column: span 4;
+  }
 }
 
 @media (min-width: 1024px) {
+  .program_wrapper {
+    grid-column: span 12;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: auto;
+  }
+
   .program {
-    grid-column: span 3;
+    width: 25%;
+    grid-column: unset;
+    transition: width 0.4s cubic-bezier(0.29, 1.31, 0.64, 1);
+    height: auto;
+  }
+
+  /* Hover effects */
+  .program_wrapper:hover .program {
+    width: 20%;
+  }
+
+  .program_wrapper .program:hover {
+    width: 40%;
   }
 }
 
 .ar-9-14 {
   aspect-ratio: 9 / 14;
+}
+
+@media (min-width: 1024px) {
+  .ar-9-14 {
+    aspect-ratio: unset;
+    height: 500px;
+  }
 }
 
 .ar-9-14 img {
@@ -314,7 +359,7 @@
   height: 100%;
   border-radius: 1rem;
   z-index: 10;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -337,18 +382,6 @@
 
 .senior:hover::after {
   opacity: .2;
-}
-
-@media (min-width: 768px) {
-  .peques, .junior {
-    grid-column: 3 / span 2;
-  }
-}
-
-@media (min-width: 1024px) {
-  .peques, .junior {
-    grid-column: 4 / span 3;
-  }
 }
 
 .peques::after {
@@ -390,4 +423,83 @@
 .program-heading {
   padding: 1rem;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* SECTION SHOP */
+
+.shop_wrapper {
+  grid-column: span 4;
+}
+
+@media (min-width: 768px) {
+  .shop_wrapper {
+    grid-column: span 8;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shop_wrapper {
+    grid-column: span 12;
+  }
+}
+
+.shop-item {
+  grid-column: span 4;
+}
+
+@media (min-width: 768px) {
+  .shop-item {
+    grid-column: span 4;
+  }
+}
+
+@media (min-width: 1480px) {
+  .shop-item {
+    grid-column: span 3;
+  }
+}
+
+.shop-item__image {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+
+  button {
+    opacity: 0.9;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  svg path {
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover svg path {
+      transform: translateX(6px);
+  }
+}
+
+.shop-item__image:hover {
+  filter: grayscale(0%);
+
+  button {
+    opacity: 1;
+  }
+}
+
+.shop-item__image .button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.shop-item__info {
+  padding: 1rem;
 }
