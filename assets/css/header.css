@@ -429,7 +429,7 @@
 }
 
 .shop-item {
-  grid-column: span 4;
+  grid-column: span 2;
 }
 
 @media (min-width: 768px) {
@@ -478,7 +478,17 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -75%);
+}
+
+.shop-item__image .button span {
+  display: none;
+}
+
+@media (min-width: 768px) {
+ .shop-item__image .button span {
+    display: block;
+  }
 }
 
 .shop-item__info {
