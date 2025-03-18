@@ -34,6 +34,7 @@
   width: 100dvw;
   height: 100dvh;
   background-color: var(--main-color);
+  color: #1d1d1b;
   top: 0;
   right: -100%;
   opacity: 0;
@@ -60,7 +61,7 @@
 .header__controls a {
   opacity: 0;
   transform: translateX(30px);
-  fill: var(--text-color);
+  fill: #1d1d1b;
   transition: color 0.3s ease, fill 0.3s ease;
 
   &:hover {
@@ -171,6 +172,7 @@
   position: absolute;
   bottom: 1rem;
   padding: 0 16px;
+  color: #1d1d1b;
 }
 
 @media (min-width: 768px) {
@@ -457,7 +459,7 @@
   }
 }
 
-@media (min-width: 1480px) {
+@media (min-width: 1340px) {
   .shop-item {
     grid-column: span 3;
   }
@@ -498,8 +500,40 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 
 .shop-item__info {
   padding: 1rem;
+}
+
+/* SECTION  CTA */
+
+.cta-section {
+  grid-column: span 4;
+  padding: 3rem;
+  text-align: center;
+  background-color: var(--text-color);
+  border-radius: 1.5rem;
+  color: var(--white-color);
+}
+
+@media (min-width: 768px) {
+ .cta-section {
+    grid-column: span 8;
+  }
+}
+
+@media (min-width: 1024px) {
+.cta-section {
+    grid-column: span 12;
+  }
+}
+
+.cta-section p {
+  margin-bottom: 1rem;
+}
+
+.cta-section a {
+  align-self: center;
 }

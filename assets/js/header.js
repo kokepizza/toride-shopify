@@ -1,3 +1,4 @@
+// Burger menu animation
 document.addEventListener('DOMContentLoaded', function() {
     const burgerMenu = document.querySelector('.burger-menu');
     const topLine = document.querySelector('.burger-menu .top');

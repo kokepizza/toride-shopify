@@ -183,12 +183,18 @@ button {
 :root {
     --main-color: #E8C733;
     --text-color: #1d1d1b;
+    --white-color: white;
     --peques: #00B0F0;
     --infantil: #4d9e45;
     --junior: #D32F2F;
     --senior: #6A1B9A;
     --padding-x: 16px;
     --padding-y: 40px;
+}
+
+[data-theme="dark"] {
+    --text-color: #ffffff;
+    --white-color: #1d1d1b;
 }
 
 @media (min-width: 768px) {
@@ -211,7 +217,7 @@ button {
 
 ::selection {
     background-color: var(--main-color);
-    color: var(--text-color);
+    color: #1d1d1b;
 }
 
 body {
@@ -219,6 +225,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     color: var(--text-color);
+    background-color: var(--white-color);
 }
 
 /* HEADINGS */
@@ -247,7 +254,7 @@ h1 {
 
 @media (min-width: 768px) {
     h1 {
-        font-size: 8vw;
+        font-size: clamp(2rem, 8vw, 8rem);
     }
 }
 
@@ -257,7 +264,7 @@ h2 {
 
 @media (min-width: 768px) {
     h2 {
-        font-size: 5vw;
+        font-size: clamp(1.5rem, 5vw, 5rem);
     }
 }
 
@@ -273,7 +280,7 @@ h3 {
 
 @media (min-width: 1024px) {
     h3 {
-        font-size: 2vw;
+        font-size: clamp(1rem, 2vw, 2rem);
     }
 }
 
