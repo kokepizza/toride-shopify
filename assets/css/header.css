@@ -189,31 +189,6 @@
   }
 }
 
-/* SNIPPET BUTTON */
-
-.button {
-  background-color: var(--main-color);
-  color: #1d1d1b; /* sin variable para poder hacer theme:dark */
-  padding: 10px 20px;
-  margin: 1rem 0;
-  border-radius: 1rem;
-  font-family: 'D-DINCondensed';
-  font-weight: bold;
-  font-size: 18px;
-  text-transform: uppercase;
-  text-align: left;
-  display: flex;
-  gap: .5rem;
-
-  svg path {
-      transition: transform 0.3s ease-in-out;
-  }
-
-  &:hover svg path {
-      transform: translateX(6px);
-  }
-}
-
 /* SNIPPET CLASE GRATIS */
 
 .clase_gratis {
@@ -500,7 +475,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  white-space: nowrap;
 }
 
 .shop-item__info {
@@ -536,4 +510,23 @@
 
 .cta-section a {
   align-self: center;
+}
+
+/* SECTION  CTA */
+
+.full-img {
+  grid-column: span 4;
+  aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 768px) {
+ .full-img {
+    grid-column: span 8;
+  }
+}
+
+@media (min-width: 1024px) {
+  .full-img {
+    grid-column: 2 / span 10;
+  }
 }

@@ -346,3 +346,42 @@ h3 {
         border-radius: 1.5rem;
     }
 }
+
+/* SNIPPET BUTTON */
+
+.button {
+    background-color: var(--main-color);
+    color: #1d1d1b; /* sin variable para poder hacer data-theme:dark */
+    padding: 10px 20px;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    font-family: 'D-DINCondensed';
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: left;
+    display: inline-flex;
+    gap: .5rem;
+    white-space: nowrap;
+    grid-column: span 4;
+  
+    svg path {
+        transition: transform 0.3s ease-in-out;
+    }
+  
+    &:hover svg path {
+        transform: translateX(6px);
+    }
+}
+
+@media (min-width: 768px) {
+   .button {
+        grid-column: span 8;
+    }
+}
+
+@media (min-width: 1024px) {
+    .button {
+        grid-column: span 12;
+    }
+}
