@@ -224,10 +224,6 @@
   margin: auto 0;
 }
 
-.intro a:hover {
-  color: var(--main-color);
-}
-
 .subtitle {
   font-family: 'D-DINCondensed';
   font-size: 20px;
@@ -549,10 +545,8 @@
   gap: .5rem;
 }
 
-@media (min-width: 768px) {
- .contact-links {
-    gap:1rem;
-  }
+.contact-links a:hover {
+  color: var(--main-color);
 }
 
 .mapa {
@@ -567,9 +561,37 @@
   aspect-ratio: 16 / 9;
 }
 
-@media (min-width: 1024px) {
+.contact-info {
+  grid-column: span 4;
+  margin: auto 0;
+}
+
+.contact-info span {
+  text-transform: uppercase;
+  color: gray;
+}
+
+@media (min-width: 768px) {
+ .contact-links {
+    gap:1rem;
+  }
+
   .mapa {
     grid-column: span 6;
+  }
+
+ .contact-info {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mapa {
+    grid-column: span 8;
+  }
+
+ .contact-info {
+    grid-column: span 4;
   }
   
   .mapa iframe {
