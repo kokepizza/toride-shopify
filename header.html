@@ -544,25 +544,40 @@
             </div>
         </section>
 
-        <!-- CONTACTO -->
-        <section class="section grid">
-            <div class="mapa">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.9406753294347!2d2.1810156!3d41.3970947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a3fbf7c58edb%3A0xda83634fbd310f57!2sTORIDE!5e0!3m2!1ses!2ses!4v1742302408866!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- FORMULARIO -->
+         <section class="section grid">
+            <div class="intro-center">
+                <p class="subtitle">contacto</p>
+                <h2>formulario</h2>
+                <p>Si tienes cualquier duda o quieres contactar con nosotros par ahacer una clase de prueba, llámanos o rellena el formulario de contacto y te responderemos lo más pronto posible.</p>
             </div>
-            <div class="contact-info">
-                <h2>toride</h2>
-                <div class="contact-links">
-                    <span>dirección</span>
-                    <a href="https://maps.app.goo.gl/z1jrt3uFpkrTZ4QUA">C/ Casp, 127, l'Eixample, 08013 Barcelona</a>
-                    <span>teléfono</span>
-                    <a href="tel:+34699112635">699112635</a>
-                    <span>correo electrónico</span>
-                    <a href="mailto:hola@toride.es">hola@toride.es</a>
-                </div>
-            </div>
-        </section>
+            <form method="post" action="/contact" class="form grid">
+                <input type="text" id="name" name="contact[name]" placeholder="Nombre completo" required>
+                <input type="email" id="email" name="contact[email]" placeholder="Correo electrónico" required>
+                <input type="tel" id="phone" name="contact[phone]" placeholder="Teléfono si prefieres WhatsApp" pattern="[0-9]{9}">
+                <select id="reason" name="contact[reason]" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="prueba">Quiero una clase de prueba gratuita</option>
+                    <option value="programas">Información sobre los programas de entrenamiento</option>
+                    <option value="precios">Precios y horarios</option>
+                    <option value="tienda">Tienda (equipamiento y suscripciones)</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <textarea name="contact[body]" id="message" style="resize: none;" placeholder="Escribe tu mensaje"></textarea>
+                <button class="button" type="submit">
+                    <span>enviar</span>
+                    <svg viewBox="0 0 23 15.9" width="20">
+                        <path d="M14.9,8.7H1c-.4,0-.8-.3-.8-.8s.3-.8.8-.8h13.8c.4,0,.8.3.8.8s-.3.8-.8.8h0Z" />
+                        <path
+                            d="M8.9,14.7c-.2,0-.4,0-.5-.2-.3-.3-.3-.8,0-1.1l5.4-5.4-5.4-5.4c-.3-.3-.3-.8,0-1.1s.8-.3,1.1,0l6,6c.3.3.3.8,0,1.1l-6,6c-.1.1-.3.2-.5.2h-.1Z" />
+                    </svg>
+                </button>
+            </form>
+         </section>
 
-        
+        <!-- INSTRUCTORES -->
+         <section class="section grid"></section>
+
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
