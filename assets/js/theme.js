@@ -87,3 +87,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+
+  const torideCircles = document.querySelectorAll('.footer svg .toride-circle');
+  
+  torideCircles.forEach(circle => {
+    gsap.to(circle, {
+      rotation: 360,
+      transformOrigin: "center center",
+      duration: 20,
+      ease: "none",
+      repeat: -1,
+    });
+  });
+});
