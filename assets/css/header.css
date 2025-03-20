@@ -1056,3 +1056,18 @@
     padding: 2rem 5rem !important;
   }
 }
+
+/* ERROR 404 */
+.e404 {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.e404 h1 {
+  font-size: 40vw;
+  cursor: pointer;
+}

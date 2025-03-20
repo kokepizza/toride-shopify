@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // GSAP scrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
+// Section Heading animations and enhanced shop items animation
 document.addEventListener("DOMContentLoaded", function() {
     const sectionHeadings = document.querySelectorAll('.section h2');
 
@@ -87,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// Footer toride animation
 document.addEventListener('DOMContentLoaded', function() {
 
   const torideCircles = document.querySelectorAll('.footer svg .toride-circle');
