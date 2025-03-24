@@ -1,0 +1,31 @@
+/*  CTA */
+.cta-section {
+    grid-column: span 4;
+    padding: 3rem;
+    text-align: center;
+    background-color: var(--text-color);
+    border-radius: 1.5rem;
+    color: var(--white-color);
+  }
+  
+  @media (min-width: 768px) {
+   .cta-section {
+      grid-column: span 8;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+  .cta-section {
+      grid-column: 2 / span 10;
+      border-radius: 2rem;
+    }
+  }
+  
+  .cta-section p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-section a {
+    align-self: center;
+    margin: 0;
+  }

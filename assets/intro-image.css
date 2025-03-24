@@ -1,0 +1,17 @@
+/* INTRO + IMAGE */
+
+.intro {
+    text-wrap: balance;
+    grid-column: span 4;
+    margin: auto 0;
+  }
+  
+  .intro-img{
+    grid-column: span 4;
+  }
+  
+  @media (min-width: 1024px){
+    .intro, .intro-img {
+      grid-column: span 6;
+    }
+  }

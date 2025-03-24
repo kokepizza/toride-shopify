@@ -149,32 +149,32 @@ button {
 
 @font-face {
     font-family: 'D-DIN';
-    src: url('../fonts/D-DIN.woff2') format('woff2'),
-         url('../fonts/D-DIN.woff') format('woff');
+    src: url('../assets/fonts/D-DIN.woff2') format('woff2'),
+         url('../assets/fonts/D-DIN.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'D-DIN';
-    src: url('../fonts/D-DIN-Bold.woff2') format('woff2'),
-         url('../fonts/D-DIN-Bold.woff') format('woff');
+    src: url('../assets/fonts/D-DIN-Bold.woff2') format('woff2'),
+         url('../assets/fonts/D-DIN-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'D-DINCondensed';
-    src: url('../fonts/D-DINCondensed.woff2') format('woff2'),
-         url('../fonts/D-DINCondensed.woff') format('woff');
+    src: url('../assets/fonts/D-DINCondensed.woff2') format('woff2'),
+         url('../assets/fonts/D-DINCondensed.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'D-DINCondensed';
-    src: url('../fonts/D-DINCondensed-Bold.woff2') format('woff2'),
-         url('../fonts/D-DINCondensed-Bold.woff') format('woff');
+    src: url('../assets/fonts/D-DINCondensed-Bold.woff2') format('woff2'),
+         url('../assets/fonts/D-DINCondensed-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
@@ -293,6 +293,10 @@ h3 {
     width: 100%;
 }
 
+.rounded {
+    border-radius: 0 0 4rem 4rem;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -318,6 +322,58 @@ h3 {
     width: 100%;
     height: auto;
     position: relative;
+}
+
+.ar-9-14 {
+    aspect-ratio: 9 / 14;
+}
+  
+@media (min-width: 1024px) {
+.ar-9-14 {
+    aspect-ratio: unset;
+    height: 500px;
+}
+}
+  
+.ar-9-14 img {
+    filter: grayscale(100%);
+}
+  
+.image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+  
+@media (min-width: 768px) {
+    .image::after {
+        border-radius: 1.5rem;
+    }
+}
+
+/* IMAGE FULL-WIDTH */
+
+.full-img {
+    grid-column: span 4;
+    aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 768px) {
+    .full-img {
+        grid-column: span 8;
+    }
+}
+
+@media (min-width: 1024px) {
+    .full-img {
+        grid-column: 2 / span 10;
+    }
 }
 
 .contain {
@@ -385,3 +441,32 @@ h3 {
         grid-column: span 12;
     }
 }
+
+/* INTRO-CENTERED */
+
+.intro-center {
+    text-align: center;
+    text-wrap: balance;
+    grid-column: span 4;
+}
+
+.subtitle {
+    font-family: 'D-DINCondensed';
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
+
+@media (min-width:768px){
+    .intro-center {
+        grid-column: 2 / span 6;
+    }
+}
+
+@media (min-width:1024px){
+    .intro-center {
+        grid-column: 4 / span 6;
+    }
+}
+
