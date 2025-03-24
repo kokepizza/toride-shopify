@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ shop.locale }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }}</title>
+
+  {{ content_for_header }} <!-- Shopify's required hook for scripts -->
+
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+</head>
+
+  <body>
+    {% section 'header' %} <!-- Include header section -->
+    
+    <main role="main">
+      {{ content_for_layout }} <!-- Main content injection -->
+    </main>
+    
+    {% section 'footer' %} <!-- Include footer section -->
+    
+    {{ 'theme.js' | asset_url | script_tag }}
+  </body>
+  
+</html>
