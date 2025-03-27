@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       document.documentElement.setAttribute("data-theme", "light");
     }
-  });
+});
 
 // GSAP scrollTrigger
 gsap.registerPlugin(ScrollTrigger);
