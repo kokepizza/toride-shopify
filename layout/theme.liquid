@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page_title }}</title>
+  {% if page_description -%}
+    <meta name="description" content="{{ page_description | truncate: 150 }}">
+  {%- endif %}
 
   {{ content_for_header }} <!-- Shopify's required hook for scripts -->
 

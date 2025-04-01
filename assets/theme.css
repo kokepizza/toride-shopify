@@ -1,89 +1,20 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
+
+   INCLUYE FONTS,
+   GLOBALS,
+   HEADINGS,
+   LAYOUT,
+   IMAGE FULL-WIDTH,
+   SNIPPET BUTTON,
+   INTRO-CENTERED, 
+   HEADER,
+   ERROR 404,
+   FOOTER
 */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -93,17 +24,7 @@ video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
     display: block;
 }
 
@@ -470,3 +391,244 @@ h3 {
     }
 }
 
+/* HEADER */
+
+.header__logo{
+    display: inline-flex;
+    align-items: center;
+}
+  
+.header__logo .oride{
+    display: none;
+}
+  
+.header__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    background-color: rgba(255,255,255,.9);
+    border: 2px solid var(--main-color);
+    border-radius: 70px;
+    margin: 16px;
+    position: fixed;
+    width: calc(100% - 32px);
+    z-index: 100;
+}
+  
+.header__menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'D-DINCondensed',sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: var(--main-color);
+    color: #1d1d1b;
+    top: 0;
+    right: -100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 90;
+    overflow-y: auto;
+}
+  
+.header__nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%
+}
+  
+.header__nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+}
+  
+.header__nav ul li,
+.header__controls a {
+    opacity: 0;
+    transform: translateX(30px);
+    fill: #1d1d1b;
+    transition: color 0.3s ease, fill 0.3s ease;
+  
+    &:hover {
+      color: var(--main-color);
+      fill: var(--main-color);
+    }
+}
+  
+.header__controls{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+  
+.header__controls a {
+    display: flex;
+    align-items: center;
+}
+  
+@media (min-width: 768px) {
+    .header__logo .oride{
+      display: flex;
+    }
+}
+  
+@media (min-width: 1024px) {
+    .burger-menu {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 16px;
+        padding: 8px 40px;
+        background-color: rgba(255,255,255,.9);
+        border: 2px solid var(--main-color);
+        border-radius: 70px;
+        position: fixed;
+        width: calc(100% - 32px);
+        z-index: 100;
+    }
+
+    .header__wrapper {
+        position: static;
+        background-color: transparent;
+        border: none;
+        width: fit-content;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header__menu{
+        position: static;
+        flex-direction: row;
+        gap: 16vw;
+        font-size: 20px;
+        width: fit-content;
+        height: fit-content;
+        background-color: transparent;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        z-index: 90;
+    }
+
+    .header__nav{
+        height: fit-content;
+    }
+
+    .header__nav ul{
+        flex-direction: row;
+        gap: 6vw;
+    }
+
+    .header__nav ul li,
+    .header__controls a {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .header__controls{
+        position: static;
+        bottom: auto;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+    }
+}
+  
+/* ERROR 404 */
+.e404 {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.e404 h1 {
+    font-size: 40vw;
+    cursor: pointer;
+    padding-top: 4rem;
+}
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: var(--main-color);
+}
+  
+.footer ::selection {
+    background-color: #1D1D1B;
+    color: var(--main-color);
+}
+  
+.footer svg {
+    width: 60px;
+    height: auto;
+}
+  
+.footer a {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #1D1D1B;
+    font-family: 'D-DINCondensed', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border: 1px solid #1D1D1B;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+  
+.footer a:hover {
+    background-color: #1D1D1B;
+    color: var(--main-color);
+}
+  
+.footer p {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+    color: #1D1D1B;
+    font-size: 12px;
+    white-space: nowrap;
+}
+  
+@media (min-width: 768px) {
+    .footer svg {
+      width: 100px;
+    }
+  
+    .footer p {
+      font-size: 1rem;
+    }
+  
+    footer {
+      padding: 2rem 5rem !important;
+    }
+}
